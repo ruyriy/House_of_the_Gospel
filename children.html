@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Плеер YouTube с выбором видео</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2; /* цвет фона страницы */
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+        background-color: lightyellow; /* цвет фона контейнера */
+        padding: 20px; /* отступы внутри контейнера */
+        border-radius: 10px; /* закругленные углы контейнера */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* тень для контейнера */
+    }
+    .videoLink {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: blue;
+        font-size: 18px; /* увеличение размера шрифта */
+        text-decoration: none; /* удаление подчеркивания */
+        display: block; /* блочное расположение */
+        padding: 10px; /* добавляем отступы вокруг текста */
+    }
+    .videoLink:hover {
+        background-color: #f0f0f0; /* изменение цвета фона при наведении */
+        color: purple; /* изменение цвета текста при наведении */
+    }
+    .videoLink:active {
+        background-color: #f0f0f0; /* изменение цвета фона при нажатии */
+        color: blue; /* изменение цвета текста при нажатии */
+    }
+    .yearTitle {
+        font-size: 14px; /* уменьшение размера шрифта */
+        color: green; /* цвет года */
+    }
+    .videoNumber {
+        color: red; /* цвет порядковых номеров и слова "Відео" */
+    }
+    .separator {
+        border-top: 2px solid #ccc; /* разделительная линия */
+        margin-top: 20px;
+    }
+    .additional-info {
+        margin-top: 20px;
+        font-size: 14px;
+        text-align: center;
+        color: #000080; /* цвет текста */
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Дитяче служіння</h2>
+
+    <h2><span class="yearTitle"><span class="year">[Відео за 2024 рік]</span></span></h2>
+    
+    <div id="videoList">
+        <p class="videoLink" onclick="changeVideo('TZv1aaVatCs?si=qNTALVBcqo0N8OgV')"><span class="videoNumber">1: Відео</span>  Служіння церкви "Дім Євангелія" (2023 рік)</p>
+        <p class="videoLink" onclick="changeVideo('MfyVacS_89E')"><span class="videoNumber">2: Відео</span>  Дитячий хор. Різдво. 24 грудня 2022 року</p>
+        <p class="videoLink" onclick="changeVideo('TBLOgns2D50')"><span class="videoNumber">3: "Бо ДИТЯ народилося нам". Дитяче служіння 24 грудня 2023 року</p>
+        <p class="videoLink" onclick="changeVideo('')"><span class="videoNumber">4: Відео</span>  **тут могло бути ваше відео**</p>
+    </div>
+
+    <div id="player" style="display:none;">
+        <iframe width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="separator"></div> <!-- Разделительная линия -->
+    
+    <div class="additional-info">
+        <p>Уявіть собі, як разом відкриваєте чарівну музичну скриню Божої любові. Ваші дитячі голоси створюють музичну симфонію, яка тішить серце Бога та всіх навколо. Ця гармонія прославляє Його, а ваша єдність в музиці відображає єдність у Христі, що робить нас сильнішими разом. Нехай кожна нота вашого співу буде променем світла, який освітлює світ і принесе радість у серця всіх, хто чує.</p>
+    </div>
+</div>
+
+<script>
+function changeVideo(videoID) {
+    var playerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById("player").innerHTML = playerHTML;
+    document.getElementById("player").style.display = "block";
+}
+</script>
+
+</body>
+</html>

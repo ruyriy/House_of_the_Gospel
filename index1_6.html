@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Плеер YouTube с выбором видео</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .videoLink {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: blue;
+        font-size: 18px; /* увеличение размера шрифта */
+        text-decoration: none; /* удаление подчеркивания */
+    }
+    .videoLink:hover {
+        color: purple; /* изменение цвета текста при наведении */
+    }
+    .videoLink:active {
+        background-color: red; /* цвет фона при выборе */
+    }
+    .yearTitle {
+        font-size: 14px; /* уменьшение размера шрифта */
+        color: green; /* цвет года */
+    }
+    .videoNumber {
+        color: red; /* цвет порядковых номеров и слова "Видео" */
+    }
+    #player {
+        display: none;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>[  Віталій Зінченко  ]</h2>
+
+    <h2><span class="yearTitle">[Відео за 2024 рік]</span></h2>
+
+    <div id="videoList">
+        <p class="videoLink" onclick="changeVideo('jVcmmoUiyzw')"><span class="videoNumber">1: Відео</span> "Яке значення має ТІЛО?" (Євр. 10:5). Віталій Зінченко, 04.02.2024</p>
+        <p class="videoLink" onclick="changeVideo('TwAOo4fobuY')"><span class="videoNumber">2: Відео</span> "Слідкуй за своїм язиком" (Якова 3:1-12). Віталій Зінченко, 18.02.2024</p>
+        <p class="videoLink" onclick="changeVideo('ir5wybSr9qM')"><span class="videoNumber">3: Відео</span> "Помісна церква" (Єфесянам 1:22-23). Віталій Зінченко, 03.03.2024</p>   
+
+    </div>
+    <h2><span class="yearTitle">[Відео за 2023 рік]</span></h2>
+    <div id="videoList2">
+
+        <p class="videoLink" onclick="changeVideo('86UN5WyKU4E')"><span class="videoNumber">4: Відео</span> "Надійний Бог" (Псалом 40). Віталій Зінченко, 01.10.2023</p>
+
+    </div>
+
+    <div id="player">
+        <iframe width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+function changeVideo(videoID) {
+    var playerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById("player").innerHTML = playerHTML;
+    document.getElementById("player").style.display = "block";
+}
+</script>
+
+</body>
+</html>

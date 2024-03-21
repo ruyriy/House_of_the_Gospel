@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Церковне служіння - Церква "Дім Євангелія" м. Суми</title>
+<style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Слегка светлый серый */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f6f7ff; /* Светло-голубой фон */
+    border-radius: 10px; /* Немного больше радиус скругления */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Немного больше тень */
+}
+
+h1 {
+    text-align: center;
+    color: #333333; /* Черный цвет текста */
+    font-size: 28px; /* Немного больше размер шрифта */
+}
+
+.pageList {
+    counter-reset: videonum; /* Сброс счетчика */
+}
+
+.pageLink {
+    margin-bottom: 15px; /* Меньше отступ снизу */
+    cursor: pointer;
+    color: #1e90ff; /* Более яркий синий цвет для ссылок */
+    font-weight: bold; /* Жирный шрифт */
+    text-decoration: none;
+    display: inline-block; /* Блочные элементы в строке */
+    border-radius: 5px;
+    padding: 8px 15px; /* Меньше отступы внутри */
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #f0f0f0; /* Светло-серый фон */
+}
+
+.pageLink:hover {
+    background-color: #e0e0e0; /* Немного темнее фон при наведении */
+}
+
+.pageLink:before {
+    counter-increment: videonum; /* Увеличиваем счетчик */
+    content: "[" counter(videonum) "] "; /* Выводим номер видео в квадратных скобках */
+    color: #9b59b6; /* Фиолетовый цвет для нумерации */
+    
+}
+
+.additional-info {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+    color: #777;
+}
+
+#player {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.yearTitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.year {
+    font-size: 14px;
+    color: #800000; /* Изменили цвет текста */
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Відеозаписи богослужінь</h1>
+
+    <div class="pageList">
+        
+        <div class="yearTitle"><span class="year">[Відео за 2024 рік]</span></div>
+        <p class="pageLink" onclick="showPlayer('ufNI8qfH6T8')">Служіння 18 лютого 2024 року</p>
+        <p class="pageLink" onclick="showPlayer('f0AMXsHDhxM')">Служіння 10 березня 2024 року</p>
+        <p class="pageLink" onclick="showPlayer('Pd-RN12brvs')">Служіння 3 березня 2024 року</p>
+        <p class="pageLink" onclick="showPlayer('0XlPG05ovgg')">Служіння 4 лютого 2024 року</p>
+        <p class="pageLink" onclick="showPlayer('I2Ihf-uVnnM')">Служіння 7 січня 2024 року</p>
+        <p class="pageLink" onclick="showPlayer('4NHXOzqYhH4')">Служіння 25 лютого 2024 року</p>
+
+        <div class="yearTitle"><span class="year">[Відео за 2023 рік]</span></div>
+        <p class="pageLink" onclick="showPlayer('b0-5N1bnKv0')">Служіння 31 грудня 2023 року</p>
+
+    </div>
+
+    <div id="player">
+        <iframe width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="additional-info">
+        <p>Відчуйте глибину cлова Божого, і дайте йому можливість трансформувати ваше життя. Хай кожна проповідь стане для вас джерелом натхнення та сили в дорозі до Бога.</p>
+        <p>Не залишайтеся на одині - відкрийте для себе нескінченний океан мудрості, що прихований у кожному записі слова.</p>
+    </div>
+</div>
+
+
+<script>
+function showPlayer(videoID) {
+    var player = document.getElementById("player");
+    player.style.display = "block";
+    player.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+}
+</script>
+
+</body>
+</html>

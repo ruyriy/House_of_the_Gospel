@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Плеер YouTube с выбором видео</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .videoLink {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: blue;
+        font-size: 18px; /* увеличение размера шрифта */
+        text-decoration: none; /* удаление подчеркивания */
+    }
+    .videoLink:hover {
+        color: purple; /* изменение цвета текста при наведении */
+    }
+    .videoLink:active {
+        background-color: red; /* цвет фона при выборе */
+    }
+    .yearTitle {
+        font-size: 14px; /* уменьшение размера шрифта */
+        color: green; /* цвет года */
+    }
+    .videoNumber {
+        color: red; /* цвет порядковых номеров и слова "Видео" */
+    }
+    #player {
+        display: none;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Сергей Комисар</h2>
+
+    <h2><span class="yearTitle">[Відео за 2024 рік]</span></h2>
+    <div id="videoList">
+        <p class="videoLink" onclick="changeVideo('xObYpOikGo0')"><span class="videoNumber">1: Відео</span> "Почему христиане могут молчать?" (Иоанна 12:42-43). Сергей Комисар, 10.03.2024</p>
+        <p class="videoLink" onclick="changeVideo('n6s_Rpr1fsA')"><span class="videoNumber">2: Відео</span> "Почему они не веровали?" (Иоанна 12:37-40). Сергей Комисар, 25.02.2024</p>
+    </div>
+    <h2><span class="yearTitle">[Відео за 2023 рік]</span></h2>
+    <div id="videoList">
+        <p class="videoLink" onclick="changeVideo('ZL67TjiyNzg')"><span class="videoNumber">3: Відео</span> "Сколько прощать брату своему?" (Мтф. 18:21). Сергей Комисар, 03.12.2023</p>
+        <p class="videoLink" onclick="changeVideo('hC4Ce3YNmp8')"><span class="videoNumber">4: Відео</span> "Ибо вы к тому призваны" (1Пет 2:18-23). Сергей Комисар, 08.10.2023</p>
+        <p class="videoLink" onclick="changeVideo('ehxobrrSZCA')"><span class="videoNumber">5: Відео</span> "Кто из вас без греха?" (Иоанна 8:1-11). Сергей Комисар, 07.01.2023</p>
+    </div>
+
+    <div id="player">
+        <iframe width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+function changeVideo(videoID) {
+    var playerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById("player").innerHTML = playerHTML;
+    document.getElementById("player").style.display = "block";
+}
+</script>
+
+</body>
+</html>

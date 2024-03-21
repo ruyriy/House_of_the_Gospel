@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Меню с видео</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden; /* Для предотвращения горизонтальной прокрутки */
+  }
+  header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 5px;
+    text-align: center;
+    position: relative; /* Добавлено для позиционирования */
+  }
+  nav {
+    background-color: #444;
+    padding: 10px;
+    text-align: center;
+    max-height: 300px; /* Максимальная высота меню */
+    overflow-y: auto; /* Включить вертикальную прокрутку при необходимости */
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    display: block; /* Размещать каждый пункт меню на отдельной строке */
+    transition: background-color 0.3s;
+  }
+  nav a:nth-child(odd) {
+    background-color: #5e72e4; /* Цвет для нечетных элементов строки */
+  }
+  nav a:nth-child(even) {
+    background-color: #f5365c; /* Цвет для четных элементов строки */
+  }
+  nav a:last-child {
+    margin-bottom: 50px; /* Добавить дополнительный отступ вниз для последнего пункта меню */
+  }
+  nav a:hover {
+    background-color: #555;
+  }
+  .ad-container {
+    position: absolute;
+    top: 1;
+    right: 0;
+    padding: 5px;
+    background-color: #5e72e4; /* Цвет фона рекламы */
+    color: #fff; /* Цвет текста рекламы */
+    font-size: 12px; /* Уменьшенный размер шрифта */
+  }
+  .video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Максимальная ширина контейнера */
+    height: 338px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .video-container iframe {
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Молодіжне служіння</h1>
+  <!-- Добавлен контейнер для рекламы -->
+  <div class="ad-container">[Відео: <span id="videoCount">0</span>]</div>
+</header>
+<nav>
+
+
+  <a href="#" onclick="playVideo('Vj2FbNwvccI')">1. Небо красивое, небо родное. Тимофей Охрименко, 19.11.2023</a>
+  <a href="#" onclick="playVideo('P5oZ8bQdIhE')">2. Ти є мій захист. Влад Охріменко та Тимофій Охріменко,т26.11.2023</a>
+  <a href="#" onclick="playVideo('bR0CwMeNQQE')">3.  Мій добрий Батько. Тимофій Охріменко, 12.11.2023 (Тест)</a>
+  <a href="#" onclick="playVideo('8Wphqtdc5dw')">4. Ти надія вся моя". Молодіжна група, 03.12.2023</a>
+  <a href="#" onclick="playVideo('-9W1HeH_52I')">5. "Христос, кто бы знал Твоё имя здесь". Влад Охрименко и Тимофей Охрименко, 03.12.2023</a>
+  <a href="#" onclick="playVideo('aCAdFzAojp8')">6. ЛЮБОВ - четверта свічка Адвенту, (24.12.2023)</a>
+  <a href="#" onclick="playVideo('g1hZ_gvQzqs?si=mSez30NogbJnrnjc')">7. НАДІЯ - перша свічка Адвенту (02.12.2023)</a>
+  <a href="#" onclick="playVideo('sjzoyUcKje4')">8. "Старый Крест". Тимофей Охрименко, 03.12.2023</a>
+  <a href="#" onclick="playVideo('d-k-6vzzp3c')">9. "Прости меня, Боже, прости я молю". Денис Савченко, 26.11.2023</a>
+  <a href="#" onclick="playVideo('VaVUjGVQhc8')">10. "По милості" Олена Приходько та Марія Чарторижська</a>
+  <a href="#" onclick="playVideo('rpBs33b7J6s?si=6SGb3IHt8m3QaOwm')">11. Прославлення Господа 3 вересня 2023 року</a>
+  <a href="#" onclick="playVideo('gpk8dLyVSAA')">12. "Формування духовної зрілості". Молодіжка 18 серпня 2023 року</a>
+  <a href="#" onclick="playVideo('0ScyC1DzB-E')">13. Відлітають роки, мов птахи восени</a>
+  <a href="#" onclick="playVideo('sIYt5VCP2KI')">14. Милостью, Боже, Твоей я живу</a>
+  <a href="#" onclick="playVideo('xTcd2LU7R-o')">15. Я с тобой</a>
+  <a href="#" onclick="playVideo('YZzIWZfQ87E')">16. О Иисус, Спаситель, Ты услышь мою мольбу</a>
+  <a href="#" onclick="playVideo('uwi8aYXXORE')">17. Время дано на время</a>
+
+
+
+
+  <!-- Добавьте другие пункты меню здесь -->
+</nav>
+<div class="video-container">
+  <iframe id="videoPlayer" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+<script>
+  // Функция для воспроизведения видео
+  function playVideo(videoId) {
+    document.getElementById('videoPlayer').src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
+  }
+
+  // Обновление счетчика видео
+  function updateVideoCount() {
+    var videoElements = document.querySelectorAll('nav a');
+    document.getElementById('videoCount').textContent = videoElements.length;
+  }
+
+  // Вызов функции обновления счетчика при загрузке страницы
+  window.onload = updateVideoCount;
+</script>
+</body>
+</html>

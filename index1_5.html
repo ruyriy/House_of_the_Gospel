@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Плеер YouTube с выбором видео</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .videoLink {
+        margin-bottom: 10px;
+        cursor: pointer;
+        color: blue;
+        font-size: 18px; /* увеличение размера шрифта */
+        text-decoration: none; /* удаление подчеркивания */
+    }
+    .videoLink:hover {
+        color: purple; /* изменение цвета текста при наведении */
+    }
+    .videoLink:active {
+        background-color: red; /* цвет фона при выборе */
+    }
+    .yearTitle {
+        font-size: 14px; /* уменьшение размера шрифта */
+    }
+    .videoNumber {
+        color: orange; /* цвет порядковых номеров и слова "Видео" */
+    }
+    .year {
+        color: green; /* цвет года */
+    }
+    #player {
+        display: none;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>[  Віктор Лаба  ]</h2>
+
+    <h2><span class="yearTitle"><span class="year">[Відео за 2023 рік]</span></span></h2>
+    <div id="videoList">
+
+        <p class="videoLink" onclick="changeVideo('Vz-bYvn4nJE')"><span class="videoNumber">1: Відео</span> "Сурми Господнього гніву" (Мтв. 24:21; Одкр. 8-10 розд.). Віктор Лаба, 17 вересня 2023 року</p>
+        <p class="videoLink" onclick="changeVideo('eSdQLJqwIvw')"><span class="videoNumber">2: Відео</span> "Велика скорбота: зняття печатей" (Матв 24:21-25; Об'явл 6,7). Віктор Лаба, 16.07.2023</p>
+        <p class="videoLink" onclick="changeVideo('Jo2kZvVa7jA')"><span class="videoNumber">3: Відео</span> "Ми проповідуємо Христа Розп'ятого" (1Кор 1:23-31). Віктор Лаба, 26 лютого 2023 року</p>
+        <p class="videoLink" onclick="changeVideo('tprnAf-DtsY')"><span class="videoNumber">4: Відео</span> "Про події на небі після підхоплення Церкви" (Одкр.4-5 розд.). Віктор Лаба,11 червня 2023 року</p>
+        <p class="videoLink" onclick="changeVideo('RKfl6vohFoo')"><span class="videoNumber">5: Відео</span> "Послання семи церквам в Асії" (Одкр 2-3). Віктор Лаба, 14 травня 2023</p>
+
+    </div>
+
+    <div id="player">
+        <iframe width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+function changeVideo(videoID) {
+    var playerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
+    document.getElementById("player").innerHTML = playerHTML;
+    document.getElementById("player").style.display = "block";
+}
+</script>
+
+</body>
+</html>
