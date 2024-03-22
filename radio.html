@@ -9,11 +9,26 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #333;
+            color: #fff;
         }
         h1, h2 {
             text-align: center;
             margin-top: 20px;
+        }
+        #radioPlayerContainer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #radioPlayer {
+            width: 80%;
+            margin: 0 auto;
+        }
+        #currentRadio {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
         }
         #radioMenu {
             list-style-type: none;
@@ -35,28 +50,10 @@
         #radioMenu li a:hover {
             background-color: #0056b3;
         }
-        #radioPlayer {
-            width: 100%;
-        }
-        #currentRadio {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
     <h1>Христианское радио онлайн.</h1>
-
-    <!-- Элемент для отображения текущей радиостанции -->
-    <div id="currentRadio"></div>
-
-    <!-- Плеер для радио -->
-    <audio id="radioPlayer" controls>
-        <source src="" type="audio/mpeg">
-        Ваш браузер не поддерживает аудио элементы.
-    </audio>
 
     <!-- Меню радиостанций -->
     <h2>Меню радиостанций</h2>
@@ -64,10 +61,19 @@
         <li><a href="#" onclick="playRadio('https://rs.radioslovo.net:4055/stream', 'Чтение Нового Завета')">Чтение Нового Завета</a></li>
         <li><a href="#" onclick="playRadio('https://rs.radioslovo.net:4165/stream', 'Ветхий Завет')">Ветхий Завет</a></li>
         <li><a href="#" onclick="playRadio('https://online.svitle.org:6729/fm', 'СВІТЛЕ РАДІО ЕММАНУЇЛ')">СВІТЛЕ РАДІО ЕММАНУЇЛ</a></li>
-        <li><a href="#" onclick="playRadio('https://online.svitle.org/kids.128.mp3', 'Svitle Kids Радио для Детей')">Svitle Kids Радио для Детей</a></li>          
-        
-        <!-- Добавьте другие радиостанции по аналогии -->
+       <!-- Добавьте другие радиостанции по аналогии -->
     </ul>
+
+    <!-- Плеер для радио -->
+    <div id="radioPlayerContainer">
+        <audio id="radioPlayer" controls>
+            <source src="" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элементы.
+        </audio>
+    </div>
+
+    <!-- Элемент для отображения текущей радиостанции -->
+    <div id="currentRadio"></div>
 
     <script>
         function playRadio(radioURL, radioName) {
