@@ -29,7 +29,6 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-weight: bold;
-            color: #ff6600; /* Цвет текста */
         }
         #radioMenu {
             list-style-type: none;
@@ -69,9 +68,8 @@
         <li><a href="#" onclick="playRadio('https://rt.radioslovo.net:4275/stream', 'Инструментальная Христианская музыка')">Инструментальная Христианская музыка</a></li>
         <li><a href="#" onclick="playRadio('https://c13.radioboss.fm:18516/stream', 'Слово Благодати')">Слово Благодати</a></li>
         <li><a href="#" onclick="playRadio('https://icecast.pereraadio.ee:9000/Semeinoje', 'Семейное Радио Эли')">Семейное Радио Эли</a></li>
-
+        <li><a href="#" onclick="playRadio('http://5.45.80.27:8000/new', 'Propovedi24 Новый завет')">Propovedi24 Новый завет</a></li>
         <!-- Добавьте другие радиостанции по аналогии -->
-
     </ul>
 
     <!-- Плеер для радио -->
@@ -83,17 +81,17 @@
     </div>
 
     <!-- Элемент для отображения текущей радиостанции -->
-    <div id="currentRadio">Сейчас играет: Название радиостанции</div>
+    <div id="currentRadio"></div>
 
-    <script>
-        function playRadio(radioURL, radioName) {
-            var player = document.getElementById('radioPlayer');
-            player.src = radioURL;
-            player.play();
-            // Устанавливаем название радиостанции
-            document.getElementById('currentRadio').textContent = "Сейчас играет: " + radioName;
-        }
-    </script>
+ <script>
+    function playRadio(radioURL, radioName) {
+        var player = document.getElementById('radioPlayer');
+        player.src = radioURL;
+        player.play();
+        // Устанавливаем название радиостанции
+        document.getElementById('currentRadio').textContent = "Сейчас играет: " + radioName;
+    }
+</script>
+    <script src="audioServiceWorker.js"></script> <!-- Добавляем эту строку -->
 </body>
 </html>
-﻿
