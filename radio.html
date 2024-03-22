@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,6 +29,7 @@
             margin-top: 20px;
             margin-bottom: 20px;
             font-weight: bold;
+            color: #ff6600; /* Цвет текста */
         }
         #radioMenu {
             list-style-type: none;
@@ -37,6 +38,7 @@
         }
         #radioMenu li {
             margin-bottom: 10px;
+            transition: transform 0.3s ease;
         }
         #radioMenu li a {
             display: inline-block;
@@ -45,10 +47,12 @@
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         #radioMenu li a:hover {
             background-color: #0056b3;
+            color: #fff;
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -61,7 +65,13 @@
         <li><a href="#" onclick="playRadio('https://rs.radioslovo.net:4055/stream', 'Чтение Нового Завета')">Чтение Нового Завета</a></li>
         <li><a href="#" onclick="playRadio('https://rs.radioslovo.net:4165/stream', 'Ветхий Завет')">Ветхий Завет</a></li>
         <li><a href="#" onclick="playRadio('https://online.svitle.org:6729/fm', 'СВІТЛЕ РАДІО ЕММАНУЇЛ')">СВІТЛЕ РАДІО ЕММАНУЇЛ</a></li>
-       <!-- Добавьте другие радиостанции по аналогии -->
+        <li><a href="#" onclick="playRadio('http://live.detskoeradio.org/radio/8010/radio.mp3', 'Детское христианское радио')">Детское христианское радио</a></li>
+        <li><a href="#" onclick="playRadio('https://rt.radioslovo.net:4275/stream', 'Инструментальная Христианская музыка')">Инструментальная Христианская музыка</a></li>
+        <li><a href="#" onclick="playRadio('https://c13.radioboss.fm:18516/stream', 'Слово Благодати')">Слово Благодати</a></li>
+        <li><a href="#" onclick="playRadio('https://icecast.pereraadio.ee:9000/Semeinoje', 'Семейное Радио Эли')">Семейное Радио Эли</a></li>
+
+        <!-- Добавьте другие радиостанции по аналогии -->
+
     </ul>
 
     <!-- Плеер для радио -->
@@ -73,7 +83,7 @@
     </div>
 
     <!-- Элемент для отображения текущей радиостанции -->
-    <div id="currentRadio"></div>
+    <div id="currentRadio">Сейчас играет: Название радиостанции</div>
 
     <script>
         function playRadio(radioURL, radioName) {
@@ -86,3 +96,4 @@
     </script>
 </body>
 </html>
+﻿
