@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация о церкве</title>
+    <title>Информация о церкви</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -35,10 +35,12 @@
         .photo-gallery-item {
             width: calc(30% - 10px);
             margin-bottom: 20px;
+            cursor: pointer; /* Добавлен указатель при наведении на фото */
         }
         .photo-gallery img {
             width: 100%;
             border-radius: 5px;
+            transition: transform 0.3s ease; /* Добавлено плавное изменение размера */
         }
         .photo-gallery-caption {
             text-align: center;
@@ -46,9 +48,12 @@
             margin-top: 5px;
             color: #333333; /* Цвет текста подписи */
         }
+        .photo-gallery-item:hover img {
+            transform: scale(1.1); /* Увеличиваем размер при наведении */
+        }
         .video-container {
-            width: 640px;
-            height: 360px;
+            width: 100%; /* Изменено на 100%, чтобы видео было адаптивным */
+            max-width: 800px; /* Изменено на 800px для более крупного размера */
             margin: 20px auto;
             background-color: #ffffff; /* Цвет фона контейнера видео */
             border-radius: 5px; /* Закругленные углы контейнера видео */
@@ -56,7 +61,7 @@
         }
         .video-container iframe {
             width: 100%;
-            height: 100%;
+            height: 450px; /* Изменено на 450px для более крупного размера */
         }
         .video-caption {
             text-align: center;
@@ -66,30 +71,49 @@
     </style>
 </head>
 <body>
-    <h1>Информация про церкву</h1>
+    <h1>Информация о церкви</h1>
     <div class="church-info">
-        <p><strong>Назва церкви:</strong> Церква євангельских християн-баптистів м. Суми</p>
-        <p><strong>Адреса:</strong> провулок Іоанна Хрестителя, 14, Sumy, Ukraine</p>
-        <p><strong></strong>https://gospel-house.netlify.app/</p>
-        <p><strong>Опис:</strong> Церква євангельских християн-баптистів м. Суми   - це чудове місце для духовного зростання та спілкування з ближніми. Ми запрошуємо всіх бажаючих приєднатися до нашої громади.</p>
+        <p><strong>Название церкви:</strong> Церковь евангельских христиан-баптистов г. Сумы</p>
+        <p><strong>Адрес:</strong> ул. Иоанна Крестителя, 14, Сумы, Украина</p>
+        <p><strong>Сайт:</strong> <a href="https://gospel-house.netlify.app/">https://gospel-house.netlify.app/</a></p>
+        <p><strong>Описание:</strong> Церковь евангельских христиан-баптистов г. Сумы - это прекрасное место для духовного роста и общения с ближними. Мы приглашаем всех желающих присоединиться к нашей общине.</p>
     </div>
     <div class="photo-gallery">
-        <div class="photo-gallery-item">
+        <div class="photo-gallery-item" onclick="showImage('1.jpg')">
             <img src="1.jpg" alt="Фото церкви 1">
-            <div class="photo-gallery-caption">Наша церква</div>
+            <div class="photo-gallery-caption">Наша церковь</div>
         </div>
-        <div class="photo-gallery-item">
+        <div class="photo-gallery-item" onclick="showImage('2.jpg')">
             <img src="2.jpg" alt="Фото церкви 2">
-            <div class="photo-gallery-caption">Наша молодь</div>
+            <div class="photo-gallery-caption">Наша молодежь</div>
         </div>
-        <div class="photo-gallery-item">
+        <div class="photo-gallery-item" onclick="showImage('3.jpg')">
             <img src="3.jpg" alt="Фото церкви 3">
-            <div class="photo-gallery-caption">Святе водне хрещення</div>
+            <div class="photo-gallery-caption">Святое водное крещение</div>
         </div>
     </div>
     <div class="video-container">
-        <iframe width="640" height="360" src="https://www.youtube.com/embed/TZv1aaVatCs?si=UrLYcQroDdHKJWB-" frameborder="0" allowfullscreen></iframe>
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/TZv1aaVatCs?si=UrLYcQroDdHKJWB-" frameborder="0" allowfullscreen></iframe>
         <div class="video-caption">Подпись под видео</div>
     </div>
+    
+    <script>
+        function showImage(src) {
+            var fullImage = document.createElement('div');
+            fullImage.style.background = 'rgba(0,0,0,0.7) url(' + src + ') no-repeat center';
+            fullImage.style.backgroundSize = 'contain';
+            fullImage.style.position = 'fixed';
+            fullImage.style.top = '0';
+            fullImage.style.left = '0';
+            fullImage.style.width = '100%';
+            fullImage.style.height = '100%';
+            fullImage.style.zIndex = '9999';
+            fullImage.style.cursor = 'pointer';
+            fullImage.onclick = function() {
+                fullImage.parentNode.removeChild(fullImage);
+            };
+            document.body.appendChild(fullImage);
+        }
+    </script>
 </body>
 </html>
