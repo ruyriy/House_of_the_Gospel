@@ -192,4 +192,13 @@ body {
   #menu-toggle:checked + .navbar {
     max-height: 1000px; /* Увеличиваем высоту, чтобы показать меню */
   }
+.menu-toggle-label {
+  display: block;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001; /* Устанавливаем выше, чем меню */
+ }
 }
