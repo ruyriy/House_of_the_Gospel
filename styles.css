@@ -4,19 +4,14 @@ body, h1, h2, p, ul, li {
   padding: 0;
 }
 
-/* Объединение стилей body */
 body {
   font-family: Arial, sans-serif;
-  background-color: #e6e6fa; /* Новый цвет фона (например, светло-серый) */
-  margin: 0;
-  padding: 0;
 }
 
 /* Стили для контейнера логотипа */
 .logo-container {
   display: flex; /* Используем flexbox для размещения элементов в ряд */
   align-items: center; /* Выравниваем элементы по вертикали */
-  justify-content: center; /* Центрируем содержимое по горизонтали */
 }
 
 /* Стили для логотипа */
@@ -27,13 +22,12 @@ body {
 /* Стили для текста поверх логотипа */
 .logo-text {
   color: #90ee90;
-  font-size: 14px; /* Уменьшаем размер текста */
+  font-size: 18px;
   font-style: italic;
   text-shadow: 1px 1px 1px black;
-  max-width: 100%; /* Ограничиваем ширину текста */
-  margin-left: 0; /* Сбрасываем отступ слева */
-  margin-top: 20px; /* Уменьшаем отступ сверху */
-  text-align: center; /* Выравниваем текст по центру */
+  max-width: 80%; /* Ограничиваем ширину текста */
+  margin-left: -100px; /* Сдвигаем текст влево на 150 пикселей */
+  margin-top: 60px; /* Опускаем текст ниже на 20 пикселей */
 }
 
 /* Стили для верхнего меню */
@@ -54,10 +48,9 @@ body {
   justify-content: center; /* Выравниваем элементы меню по центру */
 }
 
-/* Уменьшение отступов в меню */
 .navbar ul li {
   display: inline;
-  margin-right: 10px; /* Уменьшаем отступ между пунктами меню */
+  margin-right: 20px;
 }
 
 .navbar ul li a {
@@ -65,9 +58,11 @@ body {
   text-decoration: none;
 }
 
+
 /* Стили для заголовка страницы */
 .page-title {
-  margin-top: 20px; /* Увеличиваем отступ сверху */
+  margin-top: -130px; /* Поднимаем заголовок вверх на 20 пикселей */
+  margin-left: 0px; /* Добавляем отступ слева для заголовка */
   font-family: Arial, sans-serif; /* Задаем шрифт */
   font-size: 34px; /* Задаем размер шрифта */
   font-weight: bold; /* Устанавливаем полужирное начертание */
@@ -105,14 +100,8 @@ footer p {
 }
 
 /* Стили для титульного фото */
-.title-photo {
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-}
-
 .title-photo img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -122,70 +111,76 @@ footer p {
   flex-grow: 1; /* Растягиваем контейнер с текстом на всю доступную ширину */
 }
 
+body {
+  background-color: #e6e6fa; /* Новый цвет фона (например, светло-серый) */
+}
+
 /* Дополнительные стили для мобильных устройств */
 @media screen and (max-width: 600px) {
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для титульного фото на мобильных устройствах */
   .title-photo {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    width: 100%; /* Занимает всю ширину */
+    height: 200px; /* Устанавливаем высоту контейнера (можно изменить на нужную вам высоту) */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    overflow: hidden; /* Скрыть любое содержимое, которое выходит за пределы контейнера */
   }
 
   .title-photo img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Занимает всю ширину контейнера */
+    height: 100%; /* Занимает всю высоту родительского контейнера */
+    object-fit: cover; /* Растягиваем изображение, чтобы оно полностью заполняло контейнер */
   }
 
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для рекламного текста на мобильных устройствах */
   .advertisement {
-    text-align: center;
-    width: 100%;
+    text-align: center; /* Выравниваем текст по центру */
+    width: 100%; /* Занимает всю ширину */
   }
 
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для нижней панели на мобильных устройствах */
   footer {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 0;
+    position: relative; /* Возвращаем к относительному позиционированию */
+    margin-top: 20px; /* Добавляем отступ сверху */
+    margin-bottom: 0; /* Убираем отступ снизу */
   }
 
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для текста поверх логотипа на мобильных устройствах */
   .logo-text {
-    font-size: 14px;
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 20px;
-    text-align: center;
+    font-size: 14px; /* Уменьшаем размер текста */
+    max-width: 100%; /* Ограничиваем ширину текста */
+    margin-left: 0; /* Сбрасываем отступ слева */
+    margin-top: 20px; /* Уменьшаем отступ сверху */
+    text-align: center; /* Выравниваем текст по центру */
   }
 
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для верхнего меню на мобильных устройствах */
   .navbar {
-    margin-top: 20px;
-    height: auto;
+    margin-top: 20px; /* Уменьшаем отступ сверху */
+    height: auto; /* Устанавливаем высоту на auto для адаптивности */
   }
 
   .navbar ul {
-    display: block;
-    text-align: center;
+    display: block; /* Используем блочное отображение */
+    text-align: center; /* Выравниваем по центру */
   }
 
   .navbar ul li {
-    display: block;
-    margin: 10px 0;
+    display: block; /* Используем блочное отображение */
+    margin: 10px 0; /* Добавляем отступы между элементами */
   }
 
   .navbar ul li a {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: #2980b9;
-    color: #fff;
-    text-decoration: none;
+    display: inline-block; /* Используем строчно-блочное отображение */
+    padding: 5px 10px; /* Добавляем отступы вокруг текста */
+    border-radius: 5px; /* Закругляем углы */
+    background-color: #2980b9; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
   }
 
-  /* Дополнительные стили для мобильных устройств */
+  /* Стили для заголовка страницы на мобильных устройствах */
   .page-title {
-    margin-top: 10px;
-    font-size: 24px;
+    margin-top: 10px; /* Уменьшаем отступ сверху */
+    font-size: 24px; /* Уменьшаем размер шрифта */
   }
 }
