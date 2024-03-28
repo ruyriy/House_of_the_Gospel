@@ -1,4 +1,4 @@
-﻿/* Сброс стилей */
+/* Сброс стилей */
 body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
@@ -163,8 +163,12 @@ body {
   }
 
   .navbar ul {
-    display: block;
+    display: none;
     text-align: center;
+  }
+
+  .navbar.active ul {
+    display: flex;
   }
 
   .navbar ul li {
