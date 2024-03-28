@@ -22,8 +22,7 @@
 
     /* Стили для отображения верхнего меню в мобильном режиме */
     .navbar-menu {
-      display: flex;
-      flex-direction: column;
+      display: none; /* По умолчанию скрываем меню в мобильном режиме */
       background-color: #3498db;
       padding: 10px;
       position: absolute;
@@ -31,21 +30,13 @@
       left: 0;
       right: 0;
       z-index: 999; /* Поднимаем меню над другими элементами */
-      display: none; /* По умолчанию скрываем меню в мобильном режиме */
-    }
-
-    .navbar-menu.show {
-      display: flex; /* Отображаем меню, если у него есть класс "show" */
     }
 
     /* Дополнительные стили для мобильных устройств */
     @media screen and (max-width: 600px) {
-      .navbar-menu {
-        display: none; /* Скрываем верхнее меню на мобильных устройствах */
-      }
-
       .navbar-menu.show {
-        display: block; /* Отображаем меню, если у него есть класс "show" */
+        display: flex; /* Отображаем меню, если у него есть класс "show" */
+        flex-direction: column;
       }
 
       .navbar-toggle {
