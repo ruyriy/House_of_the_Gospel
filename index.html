@@ -1,10 +1,53 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Церковне служіння - Церква "Дім Євангелія" м. Суми</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Дополнительные стили для кнопки бургера */
+    .navbar-toggle {
+      display: none; /* По умолчанию скрываем кнопку бургера на десктопных устройствах */
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Стили для отображения верхнего меню в мобильном режиме */
+    .navbar-menu {
+      display: flex;
+    }
+
+    /* Дополнительные стили для мобильных устройств */
+    @media screen and (max-width: 600px) {
+      .navbar-menu {
+        display: none; /* Скрываем верхнее меню на мобильных устройствах */
+        flex-direction: column;
+        background-color: #3498db;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+      }
+
+      .navbar-menu li {
+        margin-bottom: 10px;
+      }
+
+      .navbar-toggle {
+        display: block; /* Показываем кнопку бургера на мобильных устройствах */
+        z-index: 999; /* Поднимаем кнопку бургера над другими элементами */
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Логотип и текст поверх логотипа -->
@@ -19,24 +62,23 @@
   </header>
   
   <!-- Верхнее меню -->
- <!-- Верхнее меню -->
-<nav class="navbar">
-  <div class="navbar-toggle" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-  <ul class="navbar-menu">
-    <li><a href="index.html">Главна</a></li>
-    <li><a href="church.html">Про нашу церкву</a></li>
-    <li><a href="worship.html">Відеозаписи Богослужінь</a></li>
-    <li><a href="sermons.html">Проповіді наших братів</a></li>
-    <li><a href="music.html">Музичне служіння (хор)</a></li>
-    <li><a href="children.html">Дитяче служіння</a></li>
-    <li><a href="youth.html">Молодіжне служіння</a></li>
-    <li><a href="radio.html">Онлайн радіо</a></li>
-  </ul>
-</nav>
+  <nav class="navbar">
+    <div class="navbar-toggle" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <ul class="navbar-menu">
+      <li><a href="index.html">Главна</a></li>
+      <li><a href="church.html">Про нашу церкву</a></li>
+      <li><a href="worship.html">Відеозаписи Богослужінь</a></li>
+      <li><a href="sermons.html">Проповіді наших братів</a></li>
+      <li><a href="music.html">Музичне служіння (хор)</a></li>
+      <li><a href="children.html">Дитяче служіння</a></li>
+      <li><a href="youth.html">Молодіжне служіння</a></li>
+      <li><a href="radio.html">Онлайн радіо</a></li>
+    </ul>
+  </nav>
   
   <!-- Контейнер содержимого -->
   <div class="content-container">
@@ -72,10 +114,13 @@
   <footer>
     <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
   </footer>
-// Функция для переключения видимости верхнего меню при нажатии на кнопку бургера
-function toggleMenu() {
-  var navbarMenu = document.querySelector('.navbar-menu');
-  navbarMenu.style.display = navbarMenu.style.display === 'block' ? 'none' : 'block';
-}  
+
+  <!-- JavaScript для кнопки бургера -->
+  <script>
+    function toggleMenu() {
+      var menu = document.querySelector('.navbar-menu');
+      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+    }
+  </script>
 </body>
 </html>
