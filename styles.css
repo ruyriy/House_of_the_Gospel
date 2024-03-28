@@ -58,6 +58,47 @@ body {
   text-decoration: none;
 }
 
+/* Стили для кнопки бургера */
+.navbar-toggle {
+  display: none; /* По умолчанию скрываем кнопку бургера на десктопных устройствах */
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Стили для отображения верхнего меню в мобильном режиме */
+.navbar-menu {
+  display: flex;
+}
+
+/* Дополнительные стили для мобильных устройств */
+@media screen and (max-width: 600px) {
+  .navbar-menu {
+    display: none; /* Скрываем верхнее меню на мобильных устройствах */
+    flex-direction: column;
+    background-color: #3498db;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+  }
+
+  .navbar-menu li {
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggle {
+    display: block; /* Показываем кнопку бургера на мобильных устройствах */
+    z-index: 999; /* Поднимаем кнопку бургера над другими элементами */
+  }
+}
 
 /* Стили для заголовка страницы */
 .page-title {
@@ -109,10 +150,6 @@ footer p {
 .advertisement {
   text-align: center;
   flex-grow: 1; /* Растягиваем контейнер с текстом на всю доступную ширину */
-}
-
-body {
-  background-color: #e6e6fa; /* Новый цвет фона (например, светло-серый) */
 }
 
 /* Дополнительные стили для мобильных устройств */
