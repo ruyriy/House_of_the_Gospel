@@ -46,12 +46,35 @@
                 color: #fff;
                 margin-right: 10px;
             }
+
+            /* Style for the active menu */
+            .navbar ul.active {
+                display: block;
+            }
+
+            /* Change text color for better visibility */
+            .navbar ul li a {
+                color: #fff; /* Change text color to white */
+            }
+
+            /* Style for the menu label */
+            .menu-label {
+                display: block;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Change text color for better visibility in full-screen mode */
+        .navbar ul li a {
+            color: #fff; /* Change text color to white */
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <span class="menu-icon">&#9776;</span>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
+        <span class="menu-label">Меню</span>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -61,13 +84,11 @@
     </div>
 
     <script>
-        // JavaScript to toggle the menu for mobile devices
-        const menuIcon = document.querySelector('.menu-icon');
-        const navList = document.querySelector('.navbar ul');
-
-        menuIcon.addEventListener('click', () => {
+        // JavaScript function to toggle the menu for mobile devices
+        function toggleMenu() {
+            var navList = document.querySelector('.navbar ul');
             navList.classList.toggle('active');
-        });
+        }
     </script>
 </body>
 </html>
