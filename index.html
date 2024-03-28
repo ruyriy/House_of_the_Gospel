@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
@@ -20,6 +20,12 @@
   
   <!-- Верхнее меню -->
   <nav class="navbar">
+    <!-- Кнопка для открытия меню в мобильной версии -->
+    <button class="menu-toggle" aria-label="Открыть меню">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul>
       <li><a href="index.html">Главна</a></li>
       <li><a href="church.html">Про нашу церкву</a></li>
@@ -64,10 +70,15 @@
   <footer>
     <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
   </footer>
- <script>
-document.querySelector('.navbar-toggle').addEventListener('click', function() {
-  document.querySelector('.navbar').classList.toggle('active');
-});
- <script>  
+
+  <!-- JavaScript для обработки кликов по кнопке меню -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbar = document.querySelector('.navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
