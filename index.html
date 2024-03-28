@@ -1,109 +1,73 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Церковне служіння - Церква "Дім Євангелія" м. Суми</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Дополнительные стили для кнопки бургера */
-    .navbar-toggle {
-      display: none; /* По умолчанию скрываем кнопку бургера на десктопных устройствах */
-      cursor: pointer;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    .bar {
-      width: 25px;
-      height: 3px;
-      background-color: white;
-      margin: 5px 0;
-      transition: 0.4s;
-    }
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-    /* Стили для отображения верхнего меню в мобильном режиме */
-    .navbar-menu {
-      display: none; /* По умолчанию скрываем меню в мобильном режиме */
-      background-color: #3498db;
-      padding: 10px;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      z-index: 999; /* Поднимаем меню над другими элементами */
-    }
+        .navbar ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-    /* Дополнительные стили для мобильных устройств */
-    @media screen and (max-width: 600px) {
-      .navbar-menu.show {
-        display: flex; /* Отображаем меню, если у него есть класс "show" */
-        flex-direction: column;
-      }
+        .navbar ul li {
+            display: inline;
+            margin-right: 20px;
+        }
 
-      .navbar-toggle {
-        display: block; /* Показываем кнопку бургера на мобильных устройствах */
-        z-index: 999; /* Поднимаем кнопку бургера над другими элементами */
-      }
-    }
-  </style>
+        /* Media query for mobile devices */
+        @media only screen and (max-width: 600px) {
+            .navbar ul {
+                display: none; /* Hide the menu by default on small screens */
+            }
+
+            .navbar ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+                text-align: right;
+                cursor: pointer;
+                color: #fff;
+                margin-right: 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Логотип и текст поверх логотипа -->
-  <div class="logo-container">
-    <img src="logo.jpg" alt="Логотип Церкви" class="church-logo">
-    <div class="logo-text">Благослови, душе моя, ГОСПОДА! ГОСПОДИ, Боже мій, Ти звеличився, зодягнувся у славу й велич. (Псалом 103:1)</div>
-  </div>
-  
-  <!-- Заголовок HTML страницы -->
-  <header>
-    <h1 class="page-title">Церковне служіння - Церква "Дім Євангелія" м. Суми</h1>
-  </header>
-  
-  <!-- Верхнее меню -->
-  <nav class="navbar">
-    <div class="navbar-toggle" onclick="toggleMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+    <div class="navbar">
+        <span class="menu-icon">&#9776;</span>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </div>
-    <ul class="navbar-menu">
-      <li><a href="index.html">Главна</a></li>
-      <li><a href="church.html">Про нашу церкву</a></li>
-      <li><a href="worship.html">Відеозаписи Богослужінь</a></li>
-      <li><a href="sermons.html">Проповіді наших братів</a></li>
-      <li><a href="music.html">Музичне служіння (хор)</a></li>
-      <li><a href="children.html">Дитяче служіння</a></li>
-      <li><a href="youth.html">Молодіжне служіння</a></li>
-      <li><a href="radio.html">Онлайн радіо</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Контейнер содержимого -->
-  <div class="content-container">
-    <!-- Титульное фото -->
-    <div class="title-photo">
-      <img src="your_title_photo.jpg" alt="Титульное фото">
-    </div>
-    <!-- Рекламный текст -->
-    <div class="advertisement">
-      <p>Церква ЄХБ "Дім Євангелія"</p>
-      <p>провулок Іоанна Хрестителя, 14, Sumy, Ukraine</p>
-      <p>Запрошуєм на Богослужіння</p>
-      <p>-Нд 9:00 (служіння)</p>
-      <p>-18:00 (молоді</p>
-  </div>
-  
-  <!-- Остальное содержимое страницы -->
 
-  <!-- Нижняя панель -->
-  <footer>
-    <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
-  </footer>
+    <script>
+        // JavaScript to toggle the menu for mobile devices
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('.navbar ul');
 
-  <script>
-    function toggleMenu() {
-      var menu = document.querySelector('.navbar-menu');
-      menu.classList.toggle('show');
-    }
-  </script>
+        menuIcon.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
