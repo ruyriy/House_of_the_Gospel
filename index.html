@@ -23,23 +23,29 @@
     /* Стили для отображения верхнего меню в мобильном режиме */
     .navbar-menu {
       display: flex;
+      flex-direction: column;
+      background-color: #3498db;
+      padding: 10px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      z-index: 999; /* Поднимаем меню над другими элементами */
+      display: none; /* По умолчанию скрываем меню в мобильном режиме */
+    }
+
+    .navbar-menu.show {
+      display: flex; /* Отображаем меню, если у него есть класс "show" */
     }
 
     /* Дополнительные стили для мобильных устройств */
     @media screen and (max-width: 600px) {
       .navbar-menu {
         display: none; /* Скрываем верхнее меню на мобильных устройствах */
-        flex-direction: column;
-        background-color: #3498db;
-        padding: 10px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
       }
 
-      .navbar-menu li {
-        margin-bottom: 10px;
+      .navbar-menu.show {
+        display: block; /* Отображаем меню, если у него есть класс "show" */
       }
 
       .navbar-toggle {
@@ -92,20 +98,7 @@
       <p>провулок Іоанна Хрестителя, 14, Sumy, Ukraine</p>
       <p>Запрошуєм на Богослужіння</p>
       <p>-Нд 9:00 (служіння)</p>
-      <p>-18:00 (молодіжка)</p>
-      <p>-Ср. 18:00 (служіння)</p>
-      <p>-Пт. 18:00 (молодіжне вивчення Біблії)</p>
-
-      <div class="social-media">
-         <a href="https://www.facebook.com/pravdachurch"><img src="f.png" alt="Фейсбук"></a>
-         <a href="https://www.facebook.com/pravdachurch">Фейсбук</a>
-         <a href="https://www.instagram.com/pravda.church/"><img src="i.png" alt="Инстаграм"></a>
-         <a href="https://www.instagram.com/pravda.church/">Инстаграм</a>
-         <a href="https://www.youtube.com/@pravdachurch"><img src="y.png" alt="Ютуб"></a>
-         <a href="https://www.youtube.com/@pravdachurch">Ютуб</a>
-      </div>
-
-    </div>
+      <p>-18:00 (молоді</p>
   </div>
   
   <!-- Остальное содержимое страницы -->
@@ -115,11 +108,10 @@
     <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
   </footer>
 
-  <!-- JavaScript для кнопки бургера -->
   <script>
     function toggleMenu() {
       var menu = document.querySelector('.navbar-menu');
-      menu.style.display = menu.style.display === 'none' ? 'flex' : 'none';
+      menu.classList.toggle('show');
     }
   </script>
 </body>
