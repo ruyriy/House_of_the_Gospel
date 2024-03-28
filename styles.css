@@ -122,7 +122,6 @@ footer p {
 body {
   background-color: #e6e6fa;
 }
-
 /* Дополнительные стили для мобильных устройств */
 @media screen and (max-width: 600px) {
   .title-photo {
@@ -160,6 +159,9 @@ body {
   .navbar {
     margin-top: 20px;
     height: auto;
+    overflow: hidden; /* Добавляем overflow: hidden, чтобы скрыть выход за границы */
+    max-height: 0; /* Начальная высота 0, чтобы скрыть меню */
+    transition: max-height 0.35s ease; /* Анимация для плавного появления и исчезновения */
   }
 
   .navbar ul {
@@ -184,5 +186,10 @@ body {
   .page-title {
     margin-top: 10px;
     font-size: 24px;
+  }
+
+  /* Показываем меню при активации чекбокса */
+  #menu-toggle:checked + .navbar {
+    max-height: 1000px; /* Увеличиваем высоту, чтобы показать меню */
   }
 }
