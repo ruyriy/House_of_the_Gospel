@@ -19,9 +19,9 @@
   </header>
   
   <!-- Верхнее меню -->
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-toggle-label">&#9776; Меню</label>
   <nav class="navbar">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
     <ul>
       <li><a href="index.html">Главна</a></li>
       <li><a href="church.html">Про нашу церкву</a></li>
@@ -66,25 +66,5 @@
   <footer>
     <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
   </footer>
-</body>
-</html>
-
-    </div>
-  </div>
-  
-  <!-- Нижняя панель -->
-  <footer>
-    <p>© 2024 Церква "Дім Євангелія" м. Суми</p>
-  </footer>
-
-  <!-- JavaScript для обработки кликов по кнопке меню -->
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbar = document.querySelector('.navbar');
-
-    menuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
